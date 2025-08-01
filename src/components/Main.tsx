@@ -1,7 +1,12 @@
 import React from 'react';
 import { Box, Container } from '@mui/material';
 
-const socialLinks = [
+interface SocialLink {
+  url: string;
+  title: string;
+}
+
+const socialLinks: SocialLink[] = [
   { url: "mailto:gkalian.ik@gmail.com", title: "E-mail" },
   { url: "https://www.haemprojects.com/", title: "Official site" },
   { url: "https://twitter.com/gkalian", title: "Twitter" },
@@ -15,7 +20,7 @@ const socialLinks = [
   { url: "https://www.flickr.com/photos/gkalian", title: "Flickr" }
 ];
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <Container 
       maxWidth="xl" 
