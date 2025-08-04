@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import '../styles/theme-toggle.css';
 
 interface ThemeToggleProps {
@@ -6,51 +8,27 @@ interface ThemeToggleProps {
 }
 
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ onThemeChange }) => {
-  const toggleRef = useRef<HTMLInputElement>(null);
+  const [isDark, setIsDark] = useState(() => 
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
 
-  const handleThemeChange = useCallback((isDark: boolean) => {
-    onThemeChange?.(isDark);
-  }, [onThemeChange]);
-
-  useEffect(() => {
-    const prefersDark = true;
-    if (toggleRef.current) {
-      toggleRef.current.checked = prefersDark;
-      handleThemeChange(prefersDark);
-    }
-
-    // Only add system theme listener if we want to support system preference
-    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-      if (toggleRef.current) {
-        const isDark = e.matches;
-        toggleRef.current.checked = isDark;
-        handleThemeChange(isDark);
-      }
-    };
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', handleSystemThemeChange);
-    
-    return () => {
-      mediaQuery.removeEventListener('change', handleSystemThemeChange);
-    };
-  }, [handleThemeChange]);
-
-  const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    handleThemeChange(e.target.checked);
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    onThemeChange?.(newTheme);
   };
 
   return (
-    <label className="toggle">
-      <input
-        ref={toggleRef}
-        type="checkbox"
-        className="toggle-input"
-        onChange={handleToggle}
-        aria-label="Toggle dark mode"
+    <button
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      <FontAwesomeIcon 
+        icon={isDark ? faSun : faMoon} 
+        className={`theme-icon ${isDark ? 'sun' : 'moon'}`} 
       />
-      <div className="toggle-visual" />
-    </label>
+    </button>
   );
 };
 
