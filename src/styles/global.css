@@ -1,0 +1,66 @@
+/* Global styles and theme variables */
+:root {
+  /* Light theme variables */
+  --background-color-light: hsla(230, 80%, 98%, 1);
+  --toggle-light: hsla(230, 25%, 10%, 1);
+  --line-light: hsla(230, 35%, 92.5%, 1);
+  --dot-light: hsla(230, 25%, 75%, 1);
+  --text-top-light: hsla(240, 25%, 10%, 1);
+  --text-bottom-light: hsla(240, 25%, 25%, 1);
+  --text-circle-light: hsla(240, 25%, 25%, 1);
+  --toggle-before-bg-light: transparent;
+
+  /* Dark theme variables */
+  --background-color-dark: hsla(230, 55%, 4%, 1);
+  --toggle-dark: hsla(230, 25%, 75%, 1);
+  --line-dark: hsla(230, 25%, 15%, 0.75);
+  --dot-dark: hsla(230, 25%, 90%, 1);
+  --text-top-dark: hsla(240, 60%, 90%, 1);
+  --text-bottom-dark: hsla(240, 60%, 95%, 1);
+  --text-circle-dark: hsla(240, 60%, 95%, 0.15);
+  --toggle-before-bg-dark: var(--toggle-dark);
+
+  /* Default to light theme */
+  --background-color: var(--background-color-light);
+  --toggle-color: var(--toggle-light);
+  --line-color: var(--line-light);
+  --dot-color: var(--dot-light);
+  --text-color-top: var(--text-top-light);
+  --text-color-bottom: var(--text-bottom-light);
+  --text-color-circle: var(--text-circle-light);
+  --toggle-before-bg: var(--toggle-before-bg-light);
+}
+
+/* Smooth transitions for theme changes */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  color: var(--text-color-top);
+}
+
+/* Dark theme overrides */
+.dark {
+  --background-color: var(--background-color-dark);
+  --toggle-color: var(--toggle-dark);
+  --line-color: var(--line-dark);
+  --dot-color: var(--dot-dark);
+  --text-color-top: var(--text-top-dark);
+  --text-color-bottom: var(--text-bottom-dark);
+  --text-color-circle: var(--text-circle-dark);
+  --toggle-before-bg: var(--toggle-before-bg-dark);
+}
+
+/* Light theme overrides */
+:root:not(.dark) {
+  --background-color: var(--background-color-light);
+  --toggle-color: var(--toggle-light);
+  --line-color: var(--line-light);
+  --dot-color: var(--dot-light);
+  --text-color-top: var(--text-top-light);
+  --text-color-bottom: var(--text-bottom-light);
+  --text-color-circle: var(--text-circle-light);
+  --toggle-before-bg: var(--toggle-before-bg-light);
+}

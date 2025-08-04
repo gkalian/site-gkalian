@@ -1,0 +1,67 @@
+.toggle {
+  position: fixed;
+  top: 12px;
+  left: 98%;
+  transform: translateX(-50%) scale(0.7);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-visual {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  position: relative;
+  box-shadow: inset 16px -16px 0 0 var(--toggle-color);
+  transform: scale(1) rotate(-2deg);
+  transition: box-shadow 0.5s ease 0s, transform 0.4s ease 0.1s;
+}
+
+.toggle-visual::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--toggle-before-bg);
+  transition: background 0.3s ease;
+}
+
+.toggle-visual::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: -4px 0 0 -4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 -23px 0 var(--toggle-color), 0 23px 0 var(--toggle-color),
+    23px 0 0 var(--toggle-color), -23px 0 0 var(--toggle-color),
+    15px 15px 0 var(--toggle-color), -15px 15px 0 var(--toggle-color),
+    15px -15px 0 var(--toggle-color), -15px -15px 0 var(--toggle-color);
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+.toggle-input:checked + .toggle-visual {
+  box-shadow: inset 32px -32px 0 0 var(--background-color);
+  transform: scale(0.5) rotate(0deg);
+  transition: transform 0.3s ease 0.1s, box-shadow 0.2s ease 0s;
+}
+
+.toggle-input:checked + .toggle-visual::before {
+  background: var(--toggle-color);
+  transition: background 0.3s ease 0.1s;
+}
+
+.toggle-input:checked + .toggle-visual::after {
+  transform: scale(1.5);
+  transition: transform 0.5s ease 0.15s;
+}

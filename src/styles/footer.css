@@ -1,0 +1,15 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-text {
+    font-size: 0.75rem;
+    color: var(--text-color-top);
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+}
