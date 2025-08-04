@@ -106,7 +106,7 @@
 .grid-circleText {
     display: inline-block;
     color: transparent;
-    background-image: url('https://assets.codepen.io/165585/circle-bg_1.svg');
+    background-image: url('../../public/circle.svg');
     background-color: var(--text-color-circle);
     background-size: 450px;
     background-position: 50% 80%;
