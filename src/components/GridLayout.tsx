@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/grid-layout.css';
+import Dropdown from './Dropdown';
 
 const GridLayout: React.FC = () => {
+
   return (
     <div className="grid-container">
       <div className="grid-main">
@@ -16,7 +18,7 @@ const GridLayout: React.FC = () => {
             <h1 className="grid-heading">
               <span className="grid-textGradient">nothing to see</span>
               <br />
-              <strong className="grid-circleText">there</strong>
+              <Dropdown/>
               <span className="grid-textGradient"> yet</span>
             </h1>
         </section>
