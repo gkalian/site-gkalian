@@ -40,21 +40,19 @@ const Dropdown: React.FC = () => {
       
       {isOpen && (
         <div className="dropdown-content">
-          {menuItems.map((item) => (
+          {menuItems.map((item, index) => (
             <a 
               key={item.id} 
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                '--delay': index + 1
+              } as React.CSSProperties}
             >
               {item.text}
             </a>
           ))}
-          <span
-            className="nickname-menu-item"
-          >
-            gkalian @ discord
-          </span>
         </div>
       )}
     </div>
