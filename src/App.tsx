@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { CssBaseline } from '@mui/material';
 import ThemeToggle from './components/ThemeToggle';
 import GridLayout from './components/GridLayout';
 import Footer from './components/Footer';
@@ -46,7 +45,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <CssBaseline />
       <ThemeToggle onThemeChange={handleThemeChange} />
       <GridLayout />
       <Footer />
