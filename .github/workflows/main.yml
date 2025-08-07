@@ -1,0 +1,28 @@
+name: Deploy static content to Github Pages
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:   # allows you to run this workflow manually from the Actions tab
+
+permissions:
+  contents: write  # required for semantic-release to push tags
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  prepare-version:
+    uses: ./.github/workflows/reusable-prepare.yml
+    
+  build:
+    uses: ./.github/workflows/reusable-build.yml
+
+  deploy:
+    uses: ./.github/workflows/reusable-deploy.yml
+
+  publish:
+    uses: ./.github/workflows/reusable-publish.yml
