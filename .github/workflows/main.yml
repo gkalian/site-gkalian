@@ -22,8 +22,6 @@ jobs:
   build:
     needs: prepare
     uses: ./.github/workflows/reusable-build.yml
-    with:
-      version: ${{ needs.prepare.outputs.new-version }}
     secrets: inherit
 
   deploy:
