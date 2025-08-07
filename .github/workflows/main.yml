@@ -27,6 +27,8 @@ jobs:
   deploy:
     needs: build
     uses: ./.github/workflows/reusable-deploy.yml
+    with:
+      run_id: ${{ github.run_id }}
     secrets: inherit
 
   publish:
