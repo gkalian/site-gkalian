@@ -2,7 +2,6 @@ jobs:
 
   publish:
     name: Publish
-    needs: [prepare-version, deploy]
     if: success()
     runs-on: ubuntu-latest
     steps:

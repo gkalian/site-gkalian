@@ -15,14 +15,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  prepare-version:
+  prepare:
     uses: ./.github/workflows/reusable-prepare.yml
-    
+    secrets: inherit
+
   build:
+    needs: prepare
     uses: ./.github/workflows/reusable-build.yml
+    with:
+      version: ${{ needs.prepare.outputs.new-version }}
+    secrets: inherit
 
   deploy:
+    needs: build
     uses: ./.github/workflows/reusable-deploy.yml
+    secrets: inherit
 
   publish:
+    needs: deploy
     uses: ./.github/workflows/reusable-publish.yml
+    secrets: inherit

@@ -2,7 +2,6 @@ jobs:
 
   build:
     name: Build
-    needs: prepare-version
     runs-on: ubuntu-latest
     outputs:
       artifact-name: build-artifact-${{ github.run_id }}
