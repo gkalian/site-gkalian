@@ -1,4 +1,3 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -21,23 +20,67 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  prepare-version:
+    name: Prepare version
     runs-on: ubuntu-latest
+    outputs:
+      new-version: ${{ steps.semantic-release.outputs.new-version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history for semantic-release
+          fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Release (update versions and changelog)
+        id: semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npx semantic-release
+          # Get the new version from package.json
+          echo "new-version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+
+      - name: Upload version info
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-info
+          path: |
+            package.json
+            CHANGELOG.md
+
+  build:
+    name: Build
+    needs: prepare-version
+    runs-on: ubuntu-latest
+    outputs:
+      build-artifact: ${{ steps.upload-artifact.outputs.artifact-name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download version info
+        uses: actions/download-artifact@v4
+        with:
+          name: version-info
+          path: ./
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
@@ -46,10 +89,27 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Release (update versions and changelog)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+      - name: Upload build artifact
+        id: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact-${{ github.run_id }}
+          path: dist/
+          retention-days: 1
+
+  deploy:
+    name: Deploy
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifact-${{ needs.build.outputs.build-artifact }}
+          path: ./dist
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
