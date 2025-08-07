@@ -1,3 +1,12 @@
+## [1.0.5](https://github.com/gkalian/site-gkalian/compare/v1.0.4...v1.0.5) (2025-08-07)
+
+
+### Bug Fixes
+
+* back to one file ([66156e7](https://github.com/gkalian/site-gkalian/commit/66156e787ef2e3a020ab8ffa54fa07ad5c452927))
+* pass github run id ([1c1e4a0](https://github.com/gkalian/site-gkalian/commit/1c1e4a0a6c0116dcdbfca190d506a6a6ee0ad8c0))
+* typo ([356e80f](https://github.com/gkalian/site-gkalian/commit/356e80ff904bf5dde20cae963d751d197c6bf178))
+
 ## [1.0.4](https://github.com/gkalian/site-gkalian/compare/v1.0.3...v1.0.4) (2025-08-07)
 
 
