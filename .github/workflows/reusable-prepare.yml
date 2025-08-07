@@ -3,6 +3,8 @@ jobs:
   prepare-version:
     name: Prepare
     runs-on: ubuntu-latest
+    on:
+      workflow_call:
     outputs:
       new-version: ${{ steps.get-version.outputs.version }}
     steps:

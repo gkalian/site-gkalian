@@ -3,6 +3,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    on:
+      workflow_call:
     outputs:
       artifact-name: build-artifact-${{ github.run_id }}
     steps:
