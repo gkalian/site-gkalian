@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gkalian/site-gkalian/compare/v1.0.1...v1.0.2) (2025-08-07)
+
+
+### Bug Fixes
+
+* update workflow ([c55d6f2](https://github.com/gkalian/site-gkalian/commit/c55d6f2b527290913acd5de21baf7ef45a591a9e))
+
 ## [1.0.1](https://github.com/gkalian/site-gkalian/compare/v1.0.0...v1.0.1) (2025-08-07)
 
 
