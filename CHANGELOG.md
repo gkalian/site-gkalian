@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/gkalian/site-gkalian/compare/v1.0.5...v1.0.6) (2025-08-07)
+
+
+### Bug Fixes
+
+* update dependencies ([35cfb48](https://github.com/gkalian/site-gkalian/commit/35cfb484dd734197b0d06395a1abe700569867e5))
+* update font and styling ([36f1af3](https://github.com/gkalian/site-gkalian/commit/36f1af3946f1f2fe378eba8fe7ac9d4d946bd897))
+
 ## [1.0.5](https://github.com/gkalian/site-gkalian/compare/v1.0.4...v1.0.5) (2025-08-07)
 
 
