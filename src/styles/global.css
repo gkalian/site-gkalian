@@ -1,4 +1,15 @@
 /* Global styles and theme variables */
+
+/* Import Manrope font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+/* Global styles */
+:root {
+  color: #000000;
+  background-color: #000000;
+  font-family: "Josefin Sans", sans-serif;
+}
+
 * {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */

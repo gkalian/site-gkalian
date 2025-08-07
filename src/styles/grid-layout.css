@@ -5,7 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
+    font-family: inherit;
     transition: background-color 0.3s ease, color 0.3s ease;
     background-color: var(--background-color);
 }
@@ -15,7 +15,7 @@
 }
 
 .grid-section {
-    width: clamp(360px, 60vw, 780px);
+    width: clamp(360px, 60vw, 740px);
     aspect-ratio: 1.55 / 0.5;
     min-height: 200px;
     margin: auto;
