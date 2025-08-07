@@ -1,3 +1,14 @@
+## [1.0.4](https://github.com/gkalian/site-gkalian/compare/v1.0.3...v1.0.4) (2025-08-07)
+
+
+### Bug Fixes
+
+* change needs and settings ([817164c](https://github.com/gkalian/site-gkalian/commit/817164c620ead4474e4007519b385675e61837b9))
+* clean build job ([1038c06](https://github.com/gkalian/site-gkalian/commit/1038c06a22eade4a358176c5e6928af4235945e4))
+* place workflow call in proper place ([4656224](https://github.com/gkalian/site-gkalian/commit/4656224b065fbd69c742e04f43e87edb5aec4ace))
+* restructure workflow file ([296cd19](https://github.com/gkalian/site-gkalian/commit/296cd19535048192495699961ccaf3785ef2e164))
+* workflow call added ([48b047a](https://github.com/gkalian/site-gkalian/commit/48b047ace286b8ffe5c9a6ef5681b07d06919ee6))
+
 ## [1.0.3](https://github.com/gkalian/site-gkalian/compare/v1.0.2...v1.0.3) (2025-08-07)
 
 
