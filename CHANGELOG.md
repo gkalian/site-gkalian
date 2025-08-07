@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/gkalian/site-gkalian/compare/v1.0.2...v1.0.3) (2025-08-07)
+
+
+### Bug Fixes
+
+* change tabs ([17d3766](https://github.com/gkalian/site-gkalian/commit/17d3766d95c59d69d1c086b8857c049fd82921c9))
+* correct flow settings ([499e5bd](https://github.com/gkalian/site-gkalian/commit/499e5bd8bc3eee92e19a8c2aabfb64b3582d89ba))
+
 ## [1.0.2](https://github.com/gkalian/site-gkalian/compare/v1.0.1...v1.0.2) (2025-08-07)
 
 
