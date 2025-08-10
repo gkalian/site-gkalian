@@ -74,7 +74,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download version info
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: version-info
           path: ./
@@ -107,7 +107,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download build artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v5
       with:
         name: ${{ needs.build.outputs.artifact-name }}
         path: ./dist
