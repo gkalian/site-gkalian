@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/gkalian/site-gkalian/compare/v1.0.6...v1.0.7) (2025-08-12)
+
+
+### Bug Fixes
+
+* add linkedin ([bdf3a6f](https://github.com/gkalian/site-gkalian/commit/bdf3a6f50b3679ae1032ba420c08c1b82c3e367a))
+
 ## [1.0.6](https://github.com/gkalian/site-gkalian/compare/v1.0.5...v1.0.6) (2025-08-07)
 
 
