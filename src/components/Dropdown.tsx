@@ -24,9 +24,10 @@ const Dropdown: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { id: 1, text: 'github', href: 'https://github.com/gkalian' },
-    { id: 2, text: 'steam', href: 'https://steamcommunity.com/id/gkalian' },
-    { id: 3, text: 'elder scrolls', href: 'https://www.haemprojects.com/' },
+    { id: 1, text: 'linkedin', href: 'https://www.linkedin.com/in/gkalian/' },
+    { id: 2, text: 'github', href: 'https://github.com/gkalian' },
+    { id: 3, text: 'steam', href: 'https://steamcommunity.com/id/gkalian' },
+    { id: 4, text: 'elder scrolls', href: 'https://www.haemprojects.com/' },
   ];
 
   return (
