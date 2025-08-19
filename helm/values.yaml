@@ -1,37 +1,39 @@
 replicaCount: 2
 
 image:
-  repository: your-registry/your-microservice
+  repository: ghcr.io/gkalian/site-gkalian:main-0382685
   pullPolicy: IfNotPresent
   tag: ""
 
 service:
   type: ClusterIP
   port: 80
-  targetPort: 3000
+  targetPort: 80
 
 ingress:
   enabled: true
   className: "nginx"
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
   hosts:
     - host: gkalian.com
       paths:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: api-tls
+    - secretName: gkalian-tls
       hosts:
-        - api.yourdomain.com
+        - gkalian.com 
 
 resources:
   limits:
-    cpu: 500m
-    memory: 512Mi
-  requests:
-    cpu: 250m
+    cpu: 200m
     memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
 
 autoscaling:
   enabled: false
