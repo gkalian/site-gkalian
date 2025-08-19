@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/gkalian/site-gkalian/compare/v1.0.7...v1.1.0) (2025-08-19)
+
+
+### Bug Fixes
+
+* correct df name ([930198d](https://github.com/gkalian/site-gkalian/commit/930198def98e31ca50b80eed2a709b2114097704))
+* no nginx conf ([0382685](https://github.com/gkalian/site-gkalian/commit/0382685708d0ed35ecd1cf05ebdf5d84141a35f2))
+
+
+### Features
+
+* add basic helm template and dockerfile ([0111de0](https://github.com/gkalian/site-gkalian/commit/0111de0d04b44a4d4274b8269070046f49ceb070))
+
 ## [1.0.7](https://github.com/gkalian/site-gkalian/compare/v1.0.6...v1.0.7) (2025-08-12)
 
 
