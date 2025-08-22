@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@fortawesome/free-solid-svg-icons": "^7.0.0",
-    "@fortawesome/react-fontawesome": "^0.2.3",
+    "@fortawesome/react-fontawesome": "^3.0.0",
     "@mui/types": "^7.4.5",
     "@types/node": "^24.2.0",
     "@types/react": "^19.1.9",
