@@ -1,9 +1,9 @@
-replicaCount: 2
+replicaCount: 1
 
 image:
-  repository: ghcr.io/gkalian/site-gkalian:main-0382685
+  repository: ghcr.io/gkalian/site-gkalian
   pullPolicy: IfNotPresent
-  tag: ""
+  tag: "latest"
 
 service:
   type: ClusterIP
@@ -11,12 +11,11 @@ service:
   targetPort: 80
 
 ingress:
-  enabled: true
-  className: "nginx"
+  ingressClassName: traefik
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: "letsencrypt-traefik"
+    traefik.ingress.kubernetes.io/redirect-scheme: "https"
+    traefik.ingress.kubernetes.io/router.protocol: "grpc"
   hosts:
     - host: gkalian.com
       paths:
