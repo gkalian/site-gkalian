@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   branches: ['main'],
   plugins: [
     '@semantic-release/commit-analyzer',
@@ -30,8 +30,8 @@ module.exports = {
           fi
           
           #  Update Chart.yaml with yq
-          $YQ_CMD eval '.version = "\${nextRelease.version}"' -i helm/Chart.yaml
-          $YQ_CMD eval '.appVersion = "\${nextRelease.version}"' -i helm/Chart.yaml
+          $YQ_CMD eval '.version = "${nextRelease.version}"' -i helm/Chart.yaml
+          $YQ_CMD eval '.appVersion = "${nextRelease.version}"' -i helm/Chart.yaml
           `
       }
     ],
