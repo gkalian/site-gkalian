@@ -31,5 +31,42 @@
     "semantic-release": "^24.2.7",
     "typescript": "^5.9.2",
     "vite": "^7.1.0"
+  },
+  "release": {
+    "branches": ["main"],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md",
+          "changelogTitle": "# Changelog\n\nAll notable changes to this project will be documented in this file."
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        { "npmPublish": false }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "\n          # Install yq if missed\n          if ! command -v yq &> /dev/null; then\n            wget -qO /tmp/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64\n            chmod +x /tmp/yq\n            YQ_CMD=\"/tmp/yq\"\n          else\n            YQ_CMD=\"yq\"\n          fi\n          \n          #  Update Chart.yaml with yq\n          $YQ_CMD eval '.version = \"${nextRelease.version}\"' -i helm/Chart.yaml\n          $YQ_CMD eval '.appVersion = \"${nextRelease.version}\"' -i helm/Chart.yaml\n          "
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "package-lock.json",
+            "CHANGELOG.md",
+            "helm/Chart.yaml"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\\n\\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
   }
 }
