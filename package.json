@@ -1,6 +1,6 @@
 {
   "name": "gk-site",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "scripts": {
     "start": "vite",
@@ -33,7 +33,9 @@
     "vite": "^7.1.0"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -46,7 +48,9 @@
       ],
       [
         "@semantic-release/npm",
-        { "npmPublish": false }
+        {
+          "npmPublish": false
+        }
       ],
       [
         "@semantic-release/exec",

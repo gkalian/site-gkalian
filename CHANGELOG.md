@@ -1,3 +1,23 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [1.1.1](https://github.com/gkalian/site-gkalian/compare/v1.1.0...v1.1.1) (2025-08-25)
+
+
+### Bug Fixes
+
+* enable ingress ([c46449b](https://github.com/gkalian/site-gkalian/commit/c46449b884787f64423ec834e0bd4722df429a99))
+* remove env block ([ac60ae6](https://github.com/gkalian/site-gkalian/commit/ac60ae6b14e91795ed7ff9415edf24e8bb95b1db))
+* update .releaserc.js ([34b4fdc](https://github.com/gkalian/site-gkalian/commit/34b4fdc4ad81970932551f82e245ca65d4eea92b))
+* update config ([b9c3767](https://github.com/gkalian/site-gkalian/commit/b9c37675b925a050bac34945662135e6dcf12ae7))
+* update flow ([1957fe2](https://github.com/gkalian/site-gkalian/commit/1957fe22c57b2e181cd0b415b770a0c942230fcb))
+* update helm template ([9756ab0](https://github.com/gkalian/site-gkalian/commit/9756ab0019bce5949f822f1153913181e53aa3b4))
+* update name and annotation ([017a346](https://github.com/gkalian/site-gkalian/commit/017a3465a04118b04671a7ccec54b8e427c8ad67))
+* update package file ([0a839dc](https://github.com/gkalian/site-gkalian/commit/0a839dc26d0d22ece162bde451d24a3dbc65b43d))
+* update package files ([6b2e41a](https://github.com/gkalian/site-gkalian/commit/6b2e41a999ef6d490e9bdfe72c68e3b7a8e91e76))
+* update values ([c5b750d](https://github.com/gkalian/site-gkalian/commit/c5b750db3c8d88232d82eb7645b71eafe593f9cf))
+
 # [1.1.0](https://github.com/gkalian/site-gkalian/compare/v1.0.7...v1.1.0) (2025-08-19)
 
 
