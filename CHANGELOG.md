@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/gkalian/site-gkalian/compare/v1.1.1...v1.1.2) (2025-08-25)
+
+
+### Bug Fixes
+
+* update commit message ([0bb338d](https://github.com/gkalian/site-gkalian/commit/0bb338d02249a6ad735856b9bb4071d459f83bd9))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
