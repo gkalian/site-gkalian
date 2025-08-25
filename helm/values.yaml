@@ -16,7 +16,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-traefik"
     traefik.ingress.kubernetes.io/redirect-scheme: "https"
-    traefik.ingress.kubernetes.io/router.protocol: "grpc"
+    kubernetes.io/ingress.class: "traefik"
   hosts:
     - host: gkalian.com
       paths:
