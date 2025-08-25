@@ -49,3 +49,28 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Bump version
+        id: bump-version
+        run: |
+          # Get current version
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          # Bump patch version (1.0.0 -> 1.0.1)
+          IFS='.' read -r -a version_parts <<< "$CURRENT_VERSION"
+          NEW_VERSION="${version_parts[0]}.${version_parts[1]}.$((version_parts[2] + 1))"
+          
+          # Update package.json
+          npm version $NEW_VERSION --no-git-tag-version --allow-same-version
+          
+          echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "Bumped version from $CURRENT_VERSION to $NEW_VERSION"
+
+      - name: Upload version info
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-info
+          path: |
+            package.json
+            CHANGELOG.md
+            helm/Chart.yaml

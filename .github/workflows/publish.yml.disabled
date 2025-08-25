@@ -59,6 +59,7 @@ jobs:
           path: |
             package.json
             CHANGELOG.md
+            helm/Chart.yaml
 
   build:
     name: Build
