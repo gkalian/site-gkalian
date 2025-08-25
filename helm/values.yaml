@@ -11,6 +11,7 @@ service:
   targetPort: 80
 
 ingress:
+  enabled: true
   ingressClassName: traefik
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-traefik"
